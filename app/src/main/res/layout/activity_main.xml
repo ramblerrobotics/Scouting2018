@@ -15,9 +15,8 @@
         android:onClick="OpenMenu"
         android:text="Menu"
         android:textSize="24sp"
-        android:textStyle="normal|bold"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:textAllCaps="false" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
