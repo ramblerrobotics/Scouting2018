@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.mcbain.scouting2018.MainActivity">
+    tools:context="org.mcbain.scouting2018.MenuScreen">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="104dp"
-        android:layout_height="62dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/button3"
+        android:layout_width="91dp"
+        android:layout_height="56dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:onClick="OpenMenu"
-        android:text="Menu"
+        android:text="Back"
         android:textSize="24sp"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:textAllCaps="false" />
 
