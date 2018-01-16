@@ -6,4 +6,5 @@
     <string name="stat_winlossratio">WIN/LOSS</string>
     <string name="stat_auton">AUTO</string>
     <string name="stat_notes">NOTES</string>
+    <string name="team_number">#</string>
 </resources>
