@@ -12,9 +12,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        teams = new Team[2];
-        teams[0]= new Team(6066, "RamblerRobotics");
-        teams[1]= new Team(2323, "SuperSmashClash");
-        startActivity(new Intent(this, TeamList.class));
     }
 }
