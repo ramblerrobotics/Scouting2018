@@ -12,4 +12,10 @@ public class Team {
         this.num = num;
         this.name = name;
     }
+    public int getNum(){
+        return num;
+    }
+    public String getName(){
+        return name;
+    }
 }
