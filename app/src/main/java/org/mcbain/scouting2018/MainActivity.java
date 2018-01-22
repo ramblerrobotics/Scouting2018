@@ -24,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void initData(){
-        if(false){//saved data
-
+        if(true){//saved data
+        Globals.teams = new Team[1];
+        Globals.teams[0] = new Team(6066, "Rambler Robotics");
         }else{
             String data = "nothing"; // get from Victor's code
             JsonReader reader = new JsonReader(new StringReader(data));
