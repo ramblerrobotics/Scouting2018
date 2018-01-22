@@ -14,10 +14,7 @@ public class MenuScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_screen);
     }
-    public void GoBack(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -28,4 +25,33 @@ public class MenuScreen extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void openManual(View view) {
+        Intent intent = new Intent(this, Manual.class);
+        startActivity(intent);
+    }
+    public void openList(View view) {
+        Intent intent = new Intent(this, TeamList.class);
+        startActivity(intent);
+    }
+    public void openQR(View view) {
+        Intent intent = new Intent(this, QRData.class);
+        startActivity(intent);
+    }
+    public void openMSch(View view) {
+        Intent intent = new Intent(this, MatchSched.class);
+        startActivity(intent);
+    }
+    public void openContacts(View view) {
+        Intent intent = new Intent(this, Contacts.class);
+        startActivity(intent);
+    }
+    public void openSSch(View view) {
+        Intent intent = new Intent(this, ScoutSched.class);
+        startActivity(intent);
+    }public void openLicense(View view) {
+        Intent intent = new Intent(this, License.class);
+        startActivity(intent);
+    }
 }
+
