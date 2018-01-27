@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Rambler Scouting</string>
-
     <string name="scanner">Scanner</string>
     <string name="manual">Manual</string>
     <string name="license">License</string>
@@ -13,4 +12,6 @@
     <string name="team_lists">Team Lists</string>
     <string name="m_schedule">M-Schedule</string>
     <string name="menu">Menu</string>
+    <string name="version_22">Version .22</string>
+    <string name="todo">TODO</string>
 </resources>

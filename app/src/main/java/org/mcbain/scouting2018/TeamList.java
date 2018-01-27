@@ -3,6 +3,7 @@ package org.mcbain.scouting2018;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,9 +54,10 @@ public class TeamList extends AppCompatActivity {
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = getLayoutInflater().inflate(R.layout.customlayout,null);
 
-
             TextView textView =(TextView)view.findViewById(R.id.editText);
-            TextView textView2 =(TextView)view.findViewById(R.id.editText2);
+            TextView textView2 = (TextView)view.findViewById(R.id.editText2);
+            textView2.setInputType(InputType.TYPE_NULL);
+            textView.setInputType(InputType.TYPE_NULL);
 
             textView.setText(nums[i]);
             textView2.setText(names[i]);
