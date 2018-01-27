@@ -6,6 +6,29 @@ package org.mcbain.scouting2018;
 
 public class Result {
     Boolean valid;
+
+    public int getHighScale() {
+        return highScale;
+    }
+
+    public int getLowScale() {
+        return lowScale;
+    }
+
+    public int getMargin() {
+        return margin;
+    }
+
+    public Boolean getCrossedAuto() {
+        return crossedAuto;
+    }
+
+    public int getAutoScale() {
+        return autoScale;
+    }
+    public Boolean isValid(){
+        return valid;
+    }
     int highScale;
     int lowScale;
     int margin;
@@ -14,4 +37,4 @@ public class Result {
     Result(){
         valid = false;
     }
-};
+}
