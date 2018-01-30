@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
             FileIO.save(getApplicationContext());
         }
         initData();
-        ((TextView)findViewById(R.id.textView1)).setText(Globals.teams[0].getName());
-        ((TextView)findViewById(R.id.textView2)).setText(Globals.teams[1].getName());
-        ((TextView)findViewById(R.id.textView3)).setText(Integer.toString(Globals.teams[0].getResult(0).getHighScale()));
+        //((TextView)findViewById(R.id.textView1)).setText(Globals.teams[0].getName());
+        //((TextView)findViewById(R.id.textView2)).setText(Globals.teams[1].getName());
+        //((TextView)findViewById(R.id.textView3)).setText(Integer.toString(Globals.teams[0].getResult(0).getHighScale()));
     }
     public void OpenMenu(View view) {
         Intent intent = new Intent(this, MenuScreen.class);
