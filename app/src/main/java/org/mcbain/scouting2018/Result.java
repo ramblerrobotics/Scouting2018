@@ -48,9 +48,16 @@ public class Result {
     private String notes;
     Result(){
         valid = false;
+        highScale = -1;
+        lowScale = -1;
+        margin = -1;
+        crossedAuto = false;
+        autoScale = -1;
+        notes = "-1";
+        climb = -1;
     }
     Boolean init(int hs, int ls, int m, Boolean ca, int as, String n, int c){
-        if(hs <= 3 && hs >= 0 && c <= 3 && c >= 0 && ls <= 3 && ls >= 3 && as <= 3 && as >= 3){//valid inputs
+        //if(hs <= 3 && hs >= 0 && c <= 3 && c >= 0 && ls <= 3 && ls >= 3 && as <= 3 && as >= 3){//valid inputs
             highScale = hs;
             lowScale = ls;
             margin = m;
@@ -60,7 +67,7 @@ public class Result {
             climb = c;
             valid = true;
             return true;
-        }
-        return false; //will not initialize as the values are invalid
+        //}
+        //return false; //will not initialize as the values are invalid
     }
 }

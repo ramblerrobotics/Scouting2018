@@ -31,13 +31,14 @@ public class MainActivity extends AppCompatActivity {
         initData();
         ((TextView)findViewById(R.id.textView1)).setText(Globals.teams[0].getName());
         ((TextView)findViewById(R.id.textView2)).setText(Globals.teams[1].getName());
+        ((TextView)findViewById(R.id.textView3)).setText(Integer.toString(Globals.teams[0].getResult(0).getHighScale()));
     }
     public void OpenMenu(View view) {
         Intent intent = new Intent(this, MenuScreen.class);
         startActivity(intent);
     }
     private void initData(){
-        if(/*FileIO.load(getApplicationContext())*/false){//saved data
+        if(FileIO.load(getApplicationContext())){//saved data
 
         }else{
             String data = "nothing"; // get from Victor's code

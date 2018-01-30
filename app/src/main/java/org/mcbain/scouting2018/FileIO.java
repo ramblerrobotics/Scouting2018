@@ -52,19 +52,19 @@ public class FileIO {
                     buf.get(tmp, 0, len);
                     Globals.teams[i] = new Team(num, new String(tmp));
                     for(int j = 0; j < 13; j++) {
-                        Boolean valid = buf.get() == 0x01;
+                        Boolean valid = buf.get() != 0x01;
                         int as = buf.getInt();
                         int hs = buf.getInt();
                         int ls = buf.getInt();
                         int m = buf.getInt();
                         int c = buf.getInt();
-                        Boolean ca = buf.get() == 0x01;
+                        Boolean ca = buf.get() != 0x01;
                         int len2 = buf.getInt();
                         byte[] tmp2 = new byte[len2];
                         buf.get(tmp2, 0, len2);
                         String n = new String(tmp2);
-                        if(valid)
-                            Globals.teams[i].getResult(j).init(hs, ls, m, ca, as, n, c);
+                        //if(valid)
+                            Globals.teams[i].initResult(j, hs, ls, m, ca, as, n, c);
                     }
                 }
             }else{return false;}
