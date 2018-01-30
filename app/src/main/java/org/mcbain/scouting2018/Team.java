@@ -22,4 +22,7 @@ public class Team {
         return name;
     }
     public Result getResult(int i){return data[i];}
+    Boolean initResult(int num, int hs, int ls, int m, Boolean ca, int as, String n, int c) {
+        return this.data[num].init(hs, ls, m, ca, as, n, c);
+    }
 }

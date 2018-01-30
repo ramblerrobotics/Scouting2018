@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.view.View;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -17,14 +18,26 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //init test data
+        if(true){
+            Globals.teams = new Team[2];
+            Globals.teams[0] = new Team(123, "ABC");
+            Globals.teams[0].initResult(0, 2, 3, 1, true, 1, "Failure", 1);
+            Globals.teams[0].initResult(1, 1, 2, 1, false, 2, "Success", 2);
+            Globals.teams[1] = new Team(456, "DEF");
+            Globals.teams[1].initResult(0, 2, 3, 2, false, 2, "adsf", 1);
+            FileIO.save(getApplicationContext());
+        }
         initData();
+        ((TextView)findViewById(R.id.textView1)).setText(Globals.teams[0].getName());
+        ((TextView)findViewById(R.id.textView2)).setText(Globals.teams[1].getName());
     }
     public void OpenMenu(View view) {
         Intent intent = new Intent(this, MenuScreen.class);
         startActivity(intent);
     }
     private void initData(){
-        if(false){//saved data
+        if(/*FileIO.load(getApplicationContext())*/false){//saved data
 
         }else{
             String data = "nothing"; // get from Victor's code
