@@ -1,41 +1,34 @@
 package org.mcbain.scouting2018;
-import android.security.keystore.KeyInfo;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
-/**
- * Created by vromero on 1/15/18.
- */
+
+
 
 public class DownloadPage {
-    public static String getData() throws IOException {
+    public static String downloadTeams(String event) throws IOException {
 
 
+        URL url = new URL(" http://www.thebluealliance.com/api/v3/event/"+event+"/teams?X-TBA-Auth-Key=KAtHgAsYQgrSCUKHcl7jt0iRHjen2BFcYtzExuffElkV8lOHen2nPY2NXyYbnjLm");
 
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+        InputStream is;
+        is = con.getInputStream();
 
-
-
-        {
-
-            URL url = new URL("https://www.thebluealliance.com/api/v3");
-
-            URLConnection con = url.openConnection();
-            InputStream is = con.getInputStream();
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-
-            String line = null;
-
-            while ((line = br.readLine()) != null) {
-                System.out.println(line);
-
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        String ret = "";
+        try {
+            while (true) {
+               ret = ret.concat(br.readLine());
             }
-            return "Thanks";
+        } catch (Exception error_variable) {}
 
-        }
+        return ret;
+
     }
+
 }
