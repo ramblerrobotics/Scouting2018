@@ -1,5 +1,11 @@
 package org.mcbain.scouting2018;
 
+
+import android.os.StrictMode;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,12 +18,15 @@ import java.io.StringReader;
 
 import static org.mcbain.scouting2018.Globals.teams;
 
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         //init test data
         if(true){
             Globals.teams = new Team[2];
@@ -74,4 +83,5 @@ public class MainActivity extends AppCompatActivity {
             
         }
     }
+
 }
