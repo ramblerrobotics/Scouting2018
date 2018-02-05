@@ -14,4 +14,13 @@
     <string name="menu">Menu</string>
     <string name="version_22">Version .22</string>
     <string name="todo">TODO</string>
+    <string name="tap_on_a_team_s_square_to_input_data">Tap on a team\'s square to input data</string>
+    <string name="r1">R1</string>
+    <string name="r2">R2</string>
+    <string name="r3">R3</string>
+    <string name="b1">B1</string>
+    <string name="b2">B2</string>
+    <string name="b3">B3</string>
+    <string name="times">Times</string>
+    <string name="numero">#</string>
 </resources>
