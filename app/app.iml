@@ -131,6 +131,7 @@
     <orderEntry type="library" name="com.android.support:support-v4-26.0.0-alpha1" level="project" />
     <orderEntry type="library" name="com.android.support:support-compat-26.0.0-alpha1" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" name="com.joanzapata.pdfview:android-pdfview-1.0.4" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-solver:1.0.2@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-fragment-26.0.0-alpha1" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-1.0.2" level="project" />
