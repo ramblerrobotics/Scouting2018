@@ -4,94 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="85dp"
-        android:layout_height="37dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/statistic_climb"
-        android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/statistic_highscale"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/stat_lowscale"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
-        app:layout_constraintStart_toEndOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="119dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/stat_winlossratio"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/textView5" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:text="@string/stat_auton"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView6"
-        app:layout_constraintStart_toEndOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="102dp"
-        android:layout_height="27dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:text="@string/stat_notes"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView7" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="37dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="5dp"
+        android:id="@+id/num"
+        android:layout_width="24dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="4dp"
         android:text="@string/team_number"
@@ -100,4 +20,207 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/climbtext"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:layout_weight="1"
+        android:text="@string/statistic_climb"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/num"
+        app:layout_constraintStart_toEndOf="@+id/num" />
+
+    <TextView
+        android:id="@+id/HighScale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        android:text="@string/statistic_highscale"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/climbtext"
+        app:layout_constraintStart_toEndOf="@+id/climbtext" />
+
+    <TextView
+        android:id="@+id/LowScale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        android:text="@string/stat_lowscale"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/HighScale"
+        app:layout_constraintStart_toEndOf="@+id/HighScale" />
+
+    <TextView
+        android:id="@+id/WinLoss"
+        android:layout_width="99dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        android:text="@string/stat_winlossratio"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/LowScale"
+        app:layout_constraintStart_toEndOf="@+id/LowScale" />
+
+    <TextView
+        android:id="@+id/Auto"
+        android:layout_width="53dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_weight="1"
+        android:text="@string/stat_auton"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/WinLoss"
+        app:layout_constraintStart_toEndOf="@+id/WinLoss" />
+
+    <TextView
+        android:id="@+id/Notes"
+        android:layout_width="93dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_weight="1"
+        android:text="@string/stat_notes"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toEndOf="@+id/Auto" />
+
+    <TextView
+        android:id="@+id/TeamNumber"
+        android:layout_width="33dp"
+        android:layout_height="50dp"
+        android:text="@string/team_number6066"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/num" />
+
+    <Spinner
+        android:id="@+id/climbspinner"
+        android:layout_width="63dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/TeamNumber"
+        app:layout_constraintTop_toBottomOf="@+id/climbtext" />
+
+    <TextView
+        android:id="@+id/climbText"
+        android:layout_width="13dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="@+id/climbtext"
+        app:layout_constraintTop_toTopOf="@+id/climbtext" />
+
+    <Spinner
+        android:id="@+id/hs"
+        android:layout_width="49dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/climbtext"
+        app:layout_constraintTop_toBottomOf="@+id/HighScale" />
+
+    <TextView
+        android:id="@+id/hsText"
+        android:layout_width="15dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/climbText"
+        app:layout_constraintStart_toStartOf="@+id/hs" />
+
+    <Spinner
+        android:id="@+id/ls"
+        android:layout_width="106dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/hs"
+        app:layout_constraintTop_toBottomOf="@+id/HighScale" />
+
+    <TextView
+        android:id="@+id/lsText"
+        android:layout_width="14dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/hsText"
+        app:layout_constraintStart_toStartOf="@+id/ls" />
+
+    <Spinner
+        android:id="@+id/winlossspinner"
+        android:layout_width="120dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ls" />
+
+    <TextView
+        android:id="@+id/winlossText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/lsText"
+        app:layout_constraintStart_toStartOf="@+id/winlossspinner" />
+
+    <Spinner
+        android:id="@+id/autospinner"
+        android:layout_width="68dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/winlossspinner" />
+
+    <TextView
+        android:id="@+id/autoText"
+        android:layout_width="7dp"
+        android:layout_height="18dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/autospinner" />
+
+    <EditText
+        android:id="@+id/notesText"
+        android:layout_width="77dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_mariginRight="8dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="8dp" />
+
 </android.support.constraint.ConstraintLayout>

@@ -7,4 +7,11 @@
     <string name="stat_auton">AUTO</string>
     <string name="stat_notes">NOTES</string>
     <string name="team_number">#</string>
+    <string name="team_number6066">6066</string>
+    <string-array name="standardvalues_array">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
 </resources>
