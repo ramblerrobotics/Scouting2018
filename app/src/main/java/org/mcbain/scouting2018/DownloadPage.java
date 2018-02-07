@@ -1,6 +1,5 @@
 package org.mcbain.scouting2018;
 import android.widget.TextView;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +10,7 @@ import java.net.URL;
 
 
 public class DownloadPage {
+
     public static String downloadTeams(String event){
 
         try {

@@ -13,7 +13,6 @@ import android.util.JsonReader;
 import android.util.JsonToken;
 import android.view.View;
 import android.widget.TextView;
-
 import org.json.JSONObject;
 
 import java.io.IOException;
