@@ -38,4 +38,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" android:layout_marginStart="16dp"/>
 
+    <Button
+        android:id="@+id/download"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:onClick="initData"
+        android:text="Download Kettering"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
 </android.support.constraint.ConstraintLayout>
