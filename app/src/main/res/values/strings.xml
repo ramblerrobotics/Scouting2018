@@ -14,4 +14,30 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string name="app_name">Rambler Scouting</string>
+    <string name="scanner">Scanner</string>
+    <string name="manual">Manual</string>
+    <string name="license">License</string>
+    <string name="rambler">Rambler</string>
+    <string name="robotics">Robotics</string>
+    <string name="_60">60</string>
+    <string name="_66">66</string>
+    <string name="contacts">Contacts</string>
+    <string name="s_schedule">S-Schedule</string>
+    <string name="team_lists">Team Lists</string>
+    <string name="m_schedule">M-Schedule</string>
+    <string name="menu">Menu</string>
+    <string name="version_.78">Version .78</string>
+    <string name="todo">TODO</string>
+    <string name="tap_on_a_team_s_square_to_input_data">Tap on a team\'s square to input data</string>
+    <string name="r1">R1</string>
+    <string name="r2">R2</string>
+    <string name="r3">R3</string>
+    <string name="b1">B1</string>
+    <string name="b2">B2</string>
+    <string name="b3">B3</string>
+    <string name="times">Times</string>
+    <string name="numero">#</string>
+    <string name="download_kettering">Download Kettering</string>
+    <string name="download_traverse">Download Traverse</string>
 </resources>
