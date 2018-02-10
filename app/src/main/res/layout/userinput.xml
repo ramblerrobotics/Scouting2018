@@ -176,32 +176,13 @@
         app:layout_constraintStart_toStartOf="@+id/ls" />
 
     <Spinner
-        android:id="@+id/winlossspinner"
-        android:layout_width="99dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/lsText"
-        app:layout_constraintTop_toBottomOf="@+id/WinLoss" />
-
-    <TextView
-        android:id="@+id/winlossText"
-        android:layout_width="14dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginLeft="56dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/lsText"
-        app:layout_constraintStart_toStartOf="@+id/winlossspinner" />
-
-    <Spinner
         android:id="@+id/autospinner"
         android:layout_width="72dp"
         android:layout_height="37dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/winlossspinner"
+        app:layout_constraintStart_toEndOf="@+id/WinLossScore"
         app:layout_constraintTop_toBottomOf="@+id/Auto" />
 
     <TextView
@@ -210,13 +191,13 @@
         android:layout_height="18dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/winlossText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/WinLossScore"
         app:layout_constraintStart_toStartOf="@+id/autospinner" />
 
     <EditText
         android:id="@+id/notesText"
         android:layout_width="77dp"
-        android:layout_height="43dp"
+        android:layout_height="45dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:ems="10"
@@ -228,10 +209,21 @@
         android:id="@+id/AddResult"
         android:layout_width="133dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="49dp"
         android:text="Add Result"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/winlossspinner" />
+        app:layout_constraintTop_toBottomOf="@+id/WinLossScore" />
+
+    <EditText
+        android:id="@+id/WinLossScore"
+        android:layout_width="115dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintStart_toEndOf="@+id/ls"
+        app:layout_constraintTop_toBottomOf="@+id/WinLoss" />
 
 </android.support.constraint.ConstraintLayout>

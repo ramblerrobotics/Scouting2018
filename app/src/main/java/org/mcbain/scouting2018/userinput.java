@@ -29,9 +29,6 @@ public class userinput extends AppCompatActivity implements AdapterView.OnItemSe
         Spinner ls = (Spinner) findViewById(R.id.ls);
         ls.setOnItemSelectedListener(this);
         ls.setAdapter(adapter);
-        Spinner winlossspinner = (Spinner) findViewById(R.id.winlossspinner);
-        winlossspinner.setOnItemSelectedListener(this);
-        winlossspinner.setAdapter(adapter);
         Spinner autospinner = (Spinner) findViewById(R.id.autospinner);
         autospinner.setOnItemSelectedListener(this);
         autospinner.setAdapter(adapter);
@@ -43,7 +40,6 @@ public class userinput extends AppCompatActivity implements AdapterView.OnItemSe
         ((TextView)findViewById(R.id.climbText)).setText((String)((Spinner)findViewById(R.id.climbspinner)).getItemAtPosition(((Spinner)findViewById(R.id.climbspinner)).getSelectedItemPosition()));
         ((TextView)findViewById(R.id.hsText)).setText((String)((Spinner)findViewById(R.id.hs)).getItemAtPosition(((Spinner)findViewById(R.id.hs)).getSelectedItemPosition()));
         ((TextView)findViewById(R.id.lsText)).setText((String)((Spinner)findViewById(R.id.ls)).getItemAtPosition(((Spinner)findViewById(R.id.ls)).getSelectedItemPosition()));
-        ((TextView)findViewById(R.id.winlossText)).setText((String)((Spinner)findViewById(R.id.winlossspinner)).getItemAtPosition(((Spinner)findViewById(R.id.winlossspinner)).getSelectedItemPosition()));
         ((TextView)findViewById(R.id.autoText)).setText((String)((Spinner)findViewById(R.id.autospinner)).getItemAtPosition(((Spinner)findViewById(R.id.autospinner)).getSelectedItemPosition()));
     }
 
