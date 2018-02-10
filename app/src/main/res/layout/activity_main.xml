@@ -44,8 +44,19 @@
         android:layout_height="55dp"
         android:layout_marginTop="8dp"
         android:onClick="initData"
-        android:text="Download Kettering"
+        android:text="@string/download_kettering"
         app:layout_constraintEnd_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="115dp"
+        android:layout_height="55dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="68dp"
+        android:onClick="initData2"
+        android:text="@string/download_traverse"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" android:layout_marginEnd="16dp"/>
 
 </android.support.constraint.ConstraintLayout>

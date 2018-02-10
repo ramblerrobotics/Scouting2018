@@ -48,7 +48,37 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MenuScreen.class);
         startActivity(intent);
     }
-    public void initData(View view){
+    public void initData(View view) {
+        if (FileIO.load(getApplicationContext())) {//saved data
+            //return true;
+        } else {
+            String data;
+            Globals.teams = new Team[50];
+            for (int i = 0; i < 50; i++)
+                Globals.teams[i] = new Team(99999, "INVALID TEAM");
+            data = DownloadPage.downloadTeams("2018mike2"); // get from Victor's code
+            int i = 0;
+            int tmpNum = -1;
+            String tmpStr = "FAKE";
+            try {
+                for (String line : data.split("\n")) {
+                    if (line.contains("team_number"))
+                        tmpNum = Integer.parseInt(line.split(": ")[1].split(",")[0]);
+                    if (line.contains("nickname"))
+                        tmpStr = line.split(":")[1].split("\"")[1];
+                    if (tmpNum != -1 && !tmpStr.equals("FAKE")) {
+                        Globals.teams[i] = new Team(tmpNum, tmpStr);
+                        tmpNum = -1;
+                        tmpStr = "FAKE";
+                        i++;
+                    }
+                }
+            } catch (Exception e) {
+            }
+            FileIO.save(getApplicationContext());
+        }
+    }
+    public void initData2(View view){
         if(FileIO.load(getApplicationContext())){//saved data
             //return true;
         }else{
@@ -56,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams = new Team[50];
             for(int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
-            data = DownloadPage.downloadTeams("2018mike2"); // get from Victor's code
+            data = DownloadPage.downloadTeams("2018mitvc"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
