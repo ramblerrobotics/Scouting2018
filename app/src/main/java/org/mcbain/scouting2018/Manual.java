@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 //import android.content.res;
 import android.view.View;
+import android.widget.EditText;
 
 import com.joanzapata.pdfview.PDFView;
 import com.joanzapata.pdfview.util.FileUtils;
@@ -26,11 +27,7 @@ public class Manual extends AppCompatActivity {
         
             //File pdf = getApplicationContext().getAssets().open("2018FRCGameSeasonManual.pdf");
 
-                ((PDFView) findViewById(R.id.pdfview)).fromAsset("2018FRCGameSeasonManual.pdf")
-                        .defaultPage(1)
-                        .showMinimap(false)
-                        .enableSwipe(true)
-                        .load();
+
 
     }
     @Override
@@ -42,5 +39,15 @@ public class Manual extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void onClick(View view){
+        findViewById(R.id.pdfpagetext).setVisibility(View.INVISIBLE);
+        findViewById(R.id.pdfbutton).setVisibility(View.INVISIBLE);
+        EditText tmp = (EditText)findViewById(R.id.pdfpagetext);
+        ((PDFView) findViewById(R.id.pdfview)).fromAsset("2018FRCGameSeasonManual.pdf")
+                .defaultPage(Integer.parseInt(tmp.getText().toString()))
+                .showMinimap(true)
+                .enableSwipe(true)
+                .load();
     }
 }
