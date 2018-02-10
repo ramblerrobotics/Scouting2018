@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class Contacts extends AppCompatActivity {
+public class
+Contacts extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
