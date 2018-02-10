@@ -23,4 +23,6 @@
     <string name="b3">B3</string>
     <string name="times">Times</string>
     <string name="numero">#</string>
+    <string name="download_kettering">Download Kettering</string>
+    <string name="download_traverse">Download Traverse</string>
 </resources>
