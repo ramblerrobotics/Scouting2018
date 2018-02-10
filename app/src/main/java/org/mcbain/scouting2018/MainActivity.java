@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
         if(false){
             Globals.teams = new Team[2];
             Globals.teams[0] = new Team(123, "ABC");
-            Globals.teams[0].initResult(0, 2, 3, 1, true, 1, "Failure", 1);
-            Globals.teams[0].initResult(1, 1, 2, 1, false, 2, "Success", 2);
+            Globals.teams[0].initResult(0, 2, 3, 1, true, 1, "Failure", 1, 2);
+            Globals.teams[0].initResult(1, 1, 2, 1, false, 2, "Success", 2, 3);
             Globals.teams[1] = new Team(456, "DEF");
-            Globals.teams[1].initResult(0, 2, 3, 2, false, 2, "adsf", 1);
+            Globals.teams[1].initResult(0, 2, 3, 2, false, 2, "adsf", 1, 4);
             FileIO.save(getApplicationContext());
         }
         //initData();

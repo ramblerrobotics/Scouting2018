@@ -24,6 +24,7 @@ public class FileIO {
                     Result result = team.getResult(i);
                     //saved.write(result.isValid() ? 0x01 : 0x00);
                     saved.write(ByteBuffer.allocate(4).putInt(result.getAutoScale()).array());
+                    saved.write(ByteBuffer.allocate(4).putInt(result.getMatchNumber()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getHighScale()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getLowScale()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getMargin()).array());
@@ -54,6 +55,7 @@ public class FileIO {
                     for(int j = 0; j < 13; j++) {
                         //Boolean valid = buf.get() != 0x01;
                         int as = buf.getInt();
+                        int mn = buf.getInt();
                         int hs = buf.getInt();
                         int ls = buf.getInt();
                         int m = buf.getInt();
@@ -64,7 +66,7 @@ public class FileIO {
                         buf.get(tmp2, 0, len2);
                         String n = new String(tmp2);
                         //if(valid)
-                        Globals.teams[i].initResult(j, hs, ls, m, ca, as, n, c);
+                        Globals.teams[i].initResult(j, hs, ls, m, ca, as, n, c, mn);
                     }
                 }
             }else{return false;}
