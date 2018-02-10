@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/climbtext"
+        android:id="@+id/climb"
         android:layout_width="70dp"
         android:layout_height="25dp"
         android:layout_weight="1"
@@ -45,8 +45,8 @@
         android:textColor="@android:color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/climbtext"
-        app:layout_constraintStart_toEndOf="@+id/climbtext" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/climb"
+        app:layout_constraintStart_toEndOf="@+id/climb" />
 
     <TextView
         android:id="@+id/LowScale"
@@ -103,7 +103,7 @@
         android:textStyle="bold"
         app:layout_constraintBaseline_toBaselineOf="@+id/Auto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.123"
         app:layout_constraintStart_toEndOf="@+id/Auto" />
 
     <TextView
@@ -121,28 +121,30 @@
         android:id="@+id/climbspinner"
         android:layout_width="63dp"
         android:layout_height="39dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="6dp"
         app:layout_constraintStart_toEndOf="@+id/TeamNumber"
-        app:layout_constraintTop_toBottomOf="@+id/climbtext" />
+        app:layout_constraintTop_toBottomOf="@+id/climb" />
 
     <TextView
         android:id="@+id/climbText"
         android:layout_width="13dp"
         android:layout_height="23dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="@+id/climbtext"
-        app:layout_constraintTop_toTopOf="@+id/climbtext" />
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/TeamNumber"
+        app:layout_constraintTop_toTopOf="@+id/climbspinner" />
 
     <Spinner
         android:id="@+id/hs"
         android:layout_width="49dp"
         android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/climbtext"
+        app:layout_constraintStart_toEndOf="@+id/climbText"
         app:layout_constraintTop_toBottomOf="@+id/HighScale" />
 
     <TextView
@@ -158,69 +160,78 @@
         android:id="@+id/ls"
         android:layout_width="106dp"
         android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toEndOf="@+id/hs"
-        app:layout_constraintTop_toBottomOf="@+id/HighScale" />
+        app:layout_constraintStart_toEndOf="@+id/hsText"
+        app:layout_constraintTop_toBottomOf="@+id/LowScale" />
 
     <TextView
         android:id="@+id/lsText"
-        android:layout_width="14dp"
+        android:layout_width="15dp"
         android:layout_height="20dp"
         android:layout_marginStart="60dp"
         android:layout_marginLeft="60dp"
-        app:layout_constraintBottom_toBottomOf="@+id/hsText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/hsText"
         app:layout_constraintStart_toStartOf="@+id/ls" />
 
     <Spinner
         android:id="@+id/winlossspinner"
-        android:layout_width="120dp"
+        android:layout_width="99dp"
         android:layout_height="37dp"
-        android:layout_marginBottom="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ls" />
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@+id/lsText"
+        app:layout_constraintTop_toBottomOf="@+id/WinLoss" />
 
     <TextView
         android:id="@+id/winlossText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="78dp"
-        android:layout_marginLeft="78dp"
+        android:layout_width="14dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
         app:layout_constraintBaseline_toBaselineOf="@+id/lsText"
         app:layout_constraintStart_toStartOf="@+id/winlossspinner" />
 
     <Spinner
         android:id="@+id/autospinner"
-        android:layout_width="68dp"
-        android:layout_height="36dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/winlossspinner" />
+        android:layout_width="72dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/winlossspinner"
+        app:layout_constraintTop_toBottomOf="@+id/Auto" />
 
     <TextView
         android:id="@+id/autoText"
         android:layout_width="7dp"
         android:layout_height="18dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/winlossText"
         app:layout_constraintStart_toStartOf="@+id/autospinner" />
 
     <EditText
         android:id="@+id/notesText"
         android:layout_width="77dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="3dp"
-        android:layout_marginEnd="8dp"
-        android:layout_mariginRight="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
         android:ems="10"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/autoText"
+        app:layout_constraintStart_toEndOf="@+id/autospinner" />
+
+    <Button
+        android:id="@+id/AddResult"
+        android:layout_width="133dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:text="Add Result"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winlossspinner" />
 
 </android.support.constraint.ConstraintLayout>
