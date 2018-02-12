@@ -52,7 +52,7 @@ public class FileIO {
     public static Boolean load(Context context){
         try {
             InputStream saved = context.openFileInput("save");
-            byte[] data = new byte[10000];
+            byte[] data = new byte[100000];
             if(saved.read(data) > -1){
                 ByteBuffer buf = ByteBuffer.wrap(data);
                 Globals.teams = new Team[buf.getInt()];
