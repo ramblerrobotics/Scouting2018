@@ -1,12 +1,14 @@
 package org.mcbain.scouting2018;
 
 
+import android.content.DialogInterface;
 import android.os.StrictMode;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -56,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams = new Team[50];
             for (int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
+            try{
             data = DownloadPage.downloadTeams("2018mike2"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
-            try {
                 for (String line : data.split("\n")) {
                     if (line.contains("team_number"))
                         tmpNum = Integer.parseInt(line.split(": ")[1].split(",")[0]);
@@ -74,6 +76,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             } catch (Exception e) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setCancelable(false);
+                dialog.setTitle("Error");
+                dialog.setMessage("An error has occurred" );
+                dialog.setPositiveButton("Okay, but I'm upset. :(", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Action for "Delete".
+                    }
+                })
+                        .setNegativeButton("Shoopdawhoop!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Action for "Cancel".
+                            }
+                        });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
             FileIO.save(getApplicationContext());
         }
@@ -86,11 +107,12 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams = new Team[50];
             for(int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
+            try{
             data = DownloadPage.downloadTeams("2018mitvc"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
-            try {
+
                 for (String line : data.split("\n")) {
                     if (line.contains("team_number"))
                         tmpNum = Integer.parseInt(line.split(": ")[1].split(",")[0]);
@@ -104,6 +126,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }catch(Exception e){
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setCancelable(false);
+                dialog.setTitle("Error");
+                dialog.setMessage("An error has occurred" );
+                dialog.setPositiveButton("Okay, but I'm upset. :(", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Action for "Delete".
+                    }
+                })
+                        .setNegativeButton("Shoopdawhoop!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Action for "Cancel".
+                            }
+                        });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
             FileIO.save(getApplicationContext());
         }
