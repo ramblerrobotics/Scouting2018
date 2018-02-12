@@ -39,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams[1].initResult(0, 2, 3, 2, false, 2, "adsf", 1, 4);
             FileIO.save(getApplicationContext());
         }
+        Globals.matches = new Match[100];
+        Globals.teams = new Team[50];
+        FileIO.load(getApplicationContext());
         //initData();
         //((TextView)findViewById(R.id.textView1)).setText(Globals.teams[0].getName());
         //((TextView)findViewById(R.id.textView2)).setText(Globals.teams[1].getName());
@@ -49,9 +52,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void initData(View view) {
-        if (FileIO.load(getApplicationContext())) {//saved data
-            //return true;
-        } else {
             String data;
             Globals.teams = new Team[50];
             for (int i = 0; i < 50; i++)
@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
             }
             FileIO.save(getApplicationContext());
-        }
     }
     public void initData2(View view){
         if(FileIO.load(getApplicationContext())){//saved data
