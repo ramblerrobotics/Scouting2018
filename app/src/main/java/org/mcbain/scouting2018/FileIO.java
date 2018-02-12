@@ -34,6 +34,16 @@ public class FileIO {
                     saved.write(result.getNotes().getBytes());
                 }
             }
+            for(Match match : Globals.matches){
+                saved.write(ByteBuffer.allocate(8).putLong(match.getTime()).array());
+                saved.write(ByteBuffer.allocate(4).putInt(match.getR1()).array());
+                saved.write(ByteBuffer.allocate(4).putInt(match.getR2()).array());
+                saved.write(ByteBuffer.allocate(4).putInt(match.getR3()).array());
+                saved.write(ByteBuffer.allocate(4).putInt(match.getB1()).array());
+                saved.write(ByteBuffer.allocate(4).putInt(match.getB2()).array());
+                saved.write(ByteBuffer.allocate(4).putInt(match.getB3()).array());
+                saved.write(ByteBuffer.allocate(4).putInt(match.getNum()).array());
+            }
         }catch(Exception e){
             return false;
         }
@@ -68,6 +78,17 @@ public class FileIO {
                         //if(valid)
                         Globals.teams[i].initResult(j, hs, ls, m, ca, as, n, c, mn);
                     }
+                }
+                for(int i = 0; i < 100; i++){
+                    long time = buf.getLong();
+                    int r1 = buf.getInt();
+                    int r2 = buf.getInt();
+                    int r3 = buf.getInt();
+                    int b1 = buf.getInt();
+                    int b2 = buf.getInt();
+                    int b3 = buf.getInt();
+                    int num = buf.getInt();
+                    Globals.matches[i].init(time, r1, r2, r3, b1, b2, b3, num);
                 }
             }else{return false;}
 
