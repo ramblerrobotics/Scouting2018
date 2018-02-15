@@ -22,14 +22,14 @@ public class FileIO {
                 saved.write(team.getName().getBytes());
                 for(int i = 0; i < 13 /*number of results*/; i++){
                     Result result = team.getResult(i);
-                    //saved.write(result.isValid() ? 0x01 : 0x00);
+                    saved.write(result.isValid() ? 0x01 : 0x00);
                     saved.write(ByteBuffer.allocate(4).putInt(result.getAutoScale()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getMatchNumber()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getHighScale()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getLowScale()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getMargin()).array());
                     saved.write(ByteBuffer.allocate(4).putInt(result.getClimb()).array());
-                    saved.write(result.getCrossedAuto() ? 0x01 : 0x00);
+                    saved.write(result.getCrossedAuto() ? (byte)0x01 : (byte)0x00);
                     saved.write(ByteBuffer.allocate(4).putInt(result.getNotes().getBytes().length).array());
                     saved.write(result.getNotes().getBytes());
                 }
@@ -63,19 +63,19 @@ public class FileIO {
                     buf.get(tmp, 0, len);
                     Globals.teams[i] = new Team(num, new String(tmp));
                     for(int j = 0; j < 13; j++) {
-                        //Boolean valid = buf.get() != 0x01;
+                        Boolean valid = buf.get() == 0x01;
                         int as = buf.getInt();
                         int mn = buf.getInt();
                         int hs = buf.getInt();
                         int ls = buf.getInt();
                         int m = buf.getInt();
                         int c = buf.getInt();
-                        Boolean ca = buf.get() != 0x01;
+                        Boolean ca = buf.get() == 0x01;
                         int len2 = buf.getInt();
                         byte[] tmp2 = new byte[len2];
                         buf.get(tmp2, 0, len2);
                         String n = new String(tmp2);
-                        //if(valid)
+                        if(valid)
                         Globals.teams[i].initResult(j, hs, ls, m, ca, as, n, c, mn);
                     }
                 }
