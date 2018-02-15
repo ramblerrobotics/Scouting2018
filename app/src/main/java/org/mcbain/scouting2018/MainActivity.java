@@ -1,12 +1,14 @@
 package org.mcbain.scouting2018;
 
 
+import android.content.DialogInterface;
 import android.os.StrictMode;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
@@ -65,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
-            try {
+      try{
                 for (String line : data.split("\n")) {
                     if (line.contains("team_number"))
                         tmpNum = Integer.parseInt(line.split(": ")[1].split(",")[0]);
@@ -79,6 +81,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             } catch (Exception e) {
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setCancelable(false);
+                dialog.setTitle("Error");
+                dialog.setMessage("An error has occurred" );
+                dialog.setPositiveButton("Okay, but I'm upset. :(", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Action for "Delete".
+                    }
+                })
+                        .setNegativeButton("Shoopdawhoop!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Action for "Cancel".
+                            }
+                        });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
         Globals.matches = new Match[100];
         for(int j = 0; j < 100; j++){
@@ -169,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
-            try {
+            try{
                 for (String line : data.split("\n")) {
                     if (line.contains("team_number"))
                         tmpNum = Integer.parseInt(line.split(": ")[1].split(",")[0]);
@@ -183,6 +204,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }catch(Exception e){
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                dialog.setCancelable(false);
+                dialog.setTitle("Error");
+                dialog.setMessage("An error has occurred" );
+                dialog.setPositiveButton("Okay, but I'm upset. :(", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Action for "Delete".
+                    }
+                })
+                        .setNegativeButton("Shoopdawhoop!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                //Action for "Cancel".
+                            }
+                        });
+
+                final AlertDialog alert = dialog.create();
+                alert.show();
             }
             //match schedule
             Globals.matches = new Match[100];

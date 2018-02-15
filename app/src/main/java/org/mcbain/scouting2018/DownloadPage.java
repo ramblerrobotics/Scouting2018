@@ -9,11 +9,11 @@ import java.net.URL;
 
 
 
-public class DownloadPage {
+public class DownloadPage{
 
-    public static String downloadTeams(String event){
+    public static String downloadTeams(String event) throws IOException{
 
-        try {
+
             URL url = new URL(" http://www.thebluealliance.com/api/v3/event/" + event + "/teams?X-TBA-Auth-Key=KAtHgAsYQgrSCUKHcl7jt0iRHjen2BFcYtzExuffElkV8lOHen2nPY2NXyYbnjLm");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
@@ -29,7 +29,7 @@ public class DownloadPage {
             } catch (Exception error_variable) {
             }
             return ret;
-        }catch(Exception e){return "FAIL";}
+
 
     }
     public static String downloadSched(String event){
