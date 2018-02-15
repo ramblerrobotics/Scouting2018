@@ -1,5 +1,6 @@
 package org.mcbain.scouting2018;
 
+import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -65,5 +66,9 @@ public class MatchSched extends AppCompatActivity implements View.OnClickListene
         //open the userinputdesign page with match number and team number
         //to get match number, we can get the parent of view and get the appropriate child contents
         //similar for team number
+        Intent intent = new Intent(getBaseContext(), userinput.class);
+        intent.putExtra("MATCH", Integer.parseInt((String)((TextView)((TableRow)v.getParent()).getChildAt(1)).getText()));
+        intent.putExtra("TEAM", Integer.parseInt((String)((TextView)v).getText()));
+        startActivity(intent);
     }
 }
