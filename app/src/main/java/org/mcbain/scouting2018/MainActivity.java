@@ -63,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams = new Team[50];
             for (int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
+        try{
             data = DownloadPage.downloadTeams("2017mike2"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
-      try{
+
                 for (String line : data.split("\n")) {
                     if (line.contains("team_number"))
                         tmpNum = Integer.parseInt(line.split(": ")[1].split(",")[0]);
@@ -186,11 +187,12 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams = new Team[50];
             for(int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
-            data = DownloadPage.downloadTeams("2017mike2"); // get from Victor's code
+            try{
+                data = DownloadPage.downloadTeams("2017mike2"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
-            try{
+
                 for (String line : data.split("\n")) {
                     if (line.contains("team_number"))
                         tmpNum = Integer.parseInt(line.split(": ")[1].split(",")[0]);
