@@ -107,7 +107,6 @@
         app:layout_constraintStart_toEndOf="@+id/Auto" />
 
     <TextView
-        android:id="@+id/TeamNumber"
         android:layout_width="33dp"
         android:layout_height="50dp"
         android:text="@string/team_number6066"
@@ -124,7 +123,6 @@
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="6dp"
-        app:layout_constraintStart_toEndOf="@+id/TeamNumber"
         app:layout_constraintTop_toBottomOf="@+id/climb" />
 
     <TextView
@@ -134,7 +132,6 @@
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@+id/TeamNumber"
         app:layout_constraintTop_toTopOf="@+id/climbspinner" />
 
     <Spinner

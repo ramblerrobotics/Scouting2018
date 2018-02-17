@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Manual" />
-        <activity android:name=".TeamList" />
+        <activity android:name=".TeamList" android:screenOrientation="sensorLandscape"/>
         <activity android:name=".ScoutSched" />
         <activity android:name=".MatchSched" />
         <activity android:name=".Contacts" />
