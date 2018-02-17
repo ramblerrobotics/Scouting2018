@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -77,15 +78,18 @@ public class userinput extends AppCompatActivity implements AdapterView.OnItemSe
         try {
             Globals.teams[index].initResult(i, Integer.parseInt((String) ((Spinner) findViewById(R.id.hs)).getItemAtPosition(((Spinner) findViewById(R.id.hs)).getSelectedItemPosition())),
                     Integer.parseInt((String) ((Spinner) findViewById(R.id.ls)).getItemAtPosition(((Spinner) findViewById(R.id.ls)).getSelectedItemPosition())),
-                    Integer.parseInt(((EditText) findViewById(R.id.WinLossScore)).getText().toString()),
+                    Integer.parseInt(((EditText) findViewById(R.id.WinLossScore)).getText().toString().equals("") ? "0": ((EditText) findViewById(R.id.WinLossScore)).getText().toString()),
                     ((CheckBox) findViewById(R.id.crossed)).isChecked(),
                     Integer.parseInt((String) ((Spinner) findViewById(R.id.autospinner)).getItemAtPosition(((Spinner) findViewById(R.id.autospinner)).getSelectedItemPosition())),
                     ((EditText) findViewById(R.id.notesText)).getText().toString(),
                     Integer.parseInt((String) ((Spinner) findViewById(R.id.climbspinner)).getItemAtPosition(((Spinner) findViewById(R.id.climbspinner)).getSelectedItemPosition())),
                     match);
+            Toast toast = Toast.makeText(getApplicationContext(), "Result added.", Toast.LENGTH_LONG);
+            toast.show();
             //((TextView)findViewById(R.id.notesText)).setText(Integer.toString(i));
         }catch(Exception e){
-
+            Toast toast = Toast.makeText(getApplicationContext(), "Result NOT added.", Toast.LENGTH_LONG);
+            toast.show();
         }
         //Globals.teams[index].initResult(i, 0, 0, 0, true, 0, "hi", 2, 1);
     }
