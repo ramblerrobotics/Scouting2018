@@ -51,6 +51,15 @@ public class TeamList extends AppCompatActivity {
                     winloss.setText(Float.toString(((float) wl) / (float) valids));
                     autoscale.setText(Float.toString(((float) as) / (float) valids));
                     autoline.setText(String.valueOf(al));
+                }else {
+                    teamnumber.setText(Integer.toString(t.getNum()));
+                    teamname.setText(t.getName());
+                    climb.setText("N/A");
+                    highscale.setText("N/A");
+                    lowscale.setText("N/A");
+                    winloss.setText("N/A");
+                    autoscale.setText("N/A");
+                    autoline.setText("N/A");
                 }
                 tr.addView(teamnumber);
                 tr.addView(teamname);
