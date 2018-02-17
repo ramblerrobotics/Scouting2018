@@ -87,6 +87,7 @@ public class userinput extends AppCompatActivity implements AdapterView.OnItemSe
         }catch(Exception e){
 
         }
+        FileIO.save(getApplicationContext());
         //Globals.teams[index].initResult(i, 0, 0, 0, true, 0, "hi", 2, 1);
     }
 }
