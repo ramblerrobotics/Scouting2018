@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams = new Team[50];
             for (int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
-            data = DownloadPage.downloadTeams("2018mike2"); // get from Victor's code
+            data = DownloadPage.downloadTeams("2017mike2"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
             Globals.teams = new Team[50];
             for(int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
-            data = DownloadPage.downloadTeams("2018mitvc"); // get from Victor's code
+            data = DownloadPage.downloadTeams("2017mike2"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
