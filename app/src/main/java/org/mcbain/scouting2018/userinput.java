@@ -22,34 +22,35 @@ public class userinput extends AppCompatActivity implements AdapterView.OnItemSe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.userinput);
-        Spinner climb = (Spinner) findViewById(R.id.climbspinner);
-        climb.setOnItemSelectedListener(this);
+            Spinner climb = (Spinner) findViewById(R.id.climbspinner);
+            climb.setOnItemSelectedListener(this);
 // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.standardvalues_array, android.R.layout.simple_spinner_item);
+            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                    R.array.standardvalues_array, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
-        climb.setAdapter(adapter);
-        Spinner hs = (Spinner) findViewById(R.id.hs);
-        hs.setOnItemSelectedListener(this);
-        hs.setAdapter(adapter);
-        Spinner ls = (Spinner) findViewById(R.id.ls);
-        ls.setOnItemSelectedListener(this);
-        ls.setAdapter(adapter);
-        Spinner autospinner = (Spinner) findViewById(R.id.autospinner);
-        autospinner.setOnItemSelectedListener(this);
-        autospinner.setAdapter(adapter);
-        team = getIntent().getIntExtra("TEAM", 99999);
-        match = getIntent().getIntExtra("MATCH", 99999);
-        ((TextView)findViewById(R.id.TeamNumber)).setText(Integer.toString(team));
-        for(int i = 0; i < 50; i++){
-            if(Globals.teams[i].getNum() == team){
-                index = i;
-                break;
+            climb.setAdapter(adapter);
+            Spinner hs = (Spinner) findViewById(R.id.hs);
+            hs.setOnItemSelectedListener(this);
+            hs.setAdapter(adapter);
+            Spinner ls = (Spinner) findViewById(R.id.ls);
+            ls.setOnItemSelectedListener(this);
+            ls.setAdapter(adapter);
+            Spinner autospinner = (Spinner) findViewById(R.id.autospinner);
+            autospinner.setOnItemSelectedListener(this);
+            autospinner.setAdapter(adapter);
+            team = getIntent().getIntExtra("TEAM", 99999);
+            match = getIntent().getIntExtra("MATCH", 99999);
+            ((TextView) findViewById(R.id.teamNum5)).setText(Integer.toString(team));
+            for (int i = 0; i < 50; i++) {
+                if (Globals.teams[i].getNum() == team) {
+                    index = i;
+                    break;
+                }
+                //((TextView)findViewById(R.id.tmp)).setText(((TextView)findViewById(R.id.tmp)).getText()+" "+Globals.teams[i].getNum());
             }
-            //((TextView)findViewById(R.id.tmp)).setText(((TextView)findViewById(R.id.tmp)).getText()+" "+Globals.teams[i].getNum());
-        }
+
         //((TextView)findViewById(R.id.tmp)).setText(Integer.toString(index));
         //((EditText)findViewById(R.id.WinLossScore)).setText(Integer.toString(index));
     }

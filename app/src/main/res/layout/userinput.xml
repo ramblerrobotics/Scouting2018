@@ -107,6 +107,7 @@
         app:layout_constraintStart_toEndOf="@+id/Auto" />
 
     <TextView
+        android:id="@+id/teamNum5"
         android:layout_width="33dp"
         android:layout_height="50dp"
         android:text="@string/team_number6066"
