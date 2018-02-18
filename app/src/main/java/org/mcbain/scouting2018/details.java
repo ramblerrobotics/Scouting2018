@@ -15,7 +15,11 @@ public class details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         //tmp code
-        index = 0;
+        int num = getIntent().getIntExtra("NUM", 99999);
+        for(index = 0; index < Globals.teams.length; index++){
+            if(Globals.teams[index].getNum() == num)
+                break;
+        }
         TableLayout tl = (TableLayout)findViewById(R.id.resultTable);
         ((TextView)findViewById(R.id.TeamNum)).setText(Integer.toString(Globals.teams[index].getNum()));
         ((TextView)findViewById(R.id.TeamName)).setText(" " + Globals.teams[index].getName());

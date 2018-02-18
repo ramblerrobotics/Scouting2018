@@ -1,14 +1,16 @@
 package org.mcbain.scouting2018;
 
+import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class TeamList extends AppCompatActivity {
+public class TeamList extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,15 @@ public class TeamList extends AppCompatActivity {
                     winloss.setText(Float.toString(((float) wl) / (float) valids));
                     autoscale.setText(Float.toString(((float) as) / (float) valids));
                     autoline.setText(String.valueOf(al));
+                }else {
+                    teamnumber.setText(Integer.toString(t.getNum()));
+                    teamname.setText(t.getName());
+                    climb.setText("N/A");
+                    highscale.setText("N/A");
+                    lowscale.setText("N/A");
+                    winloss.setText("N/A");
+                    autoscale.setText("N/A");
+                    autoline.setText("N/A");
                 }
                 tr.addView(teamnumber);
                 tr.addView(teamname);
@@ -60,9 +71,15 @@ public class TeamList extends AppCompatActivity {
                 tr.addView(winloss);
                 tr.addView(autoline);
                 tr.addView(autoscale);
+                tr.setOnClickListener(this);
                 ((TableLayout) findViewById(R.id.StatsTable)).addView(tr);
             }
-
+            TextView nothing = new TextView(getApplicationContext());
+            nothing.setText("Boring placeholder text");
+            nothing.setVisibility(View.INVISIBLE);
+            TableRow nothing2 = new TableRow(getApplicationContext());
+            nothing2.addView(nothing);
+        ((TableLayout)findViewById(R.id.StatsTable)).addView(nothing2);
         }
 
     @Override
@@ -74,5 +91,12 @@ public class TeamList extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, details.class);
+        intent.putExtra("NUM", Integer.parseInt(((TextView)((TableRow)v).getChildAt(0)).getText().toString()));
+        startActivity(intent);
     }
 }
