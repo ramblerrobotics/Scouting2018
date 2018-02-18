@@ -1,5 +1,6 @@
 package org.mcbain.scouting2018;
 
+import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,7 +10,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class TeamList extends AppCompatActivity {
+public class TeamList extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,7 @@ public class TeamList extends AppCompatActivity {
                 tr.addView(winloss);
                 tr.addView(autoline);
                 tr.addView(autoscale);
+                tr.setOnClickListener(this);
                 ((TableLayout) findViewById(R.id.StatsTable)).addView(tr);
             }
             TextView nothing = new TextView(getApplicationContext());
@@ -89,5 +91,12 @@ public class TeamList extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, details.class);
+        intent.putExtra("NUM", Integer.parseInt(((TextView)((TableRow)v).getChildAt(0)).getText().toString()));
+        startActivity(intent);
     }
 }
