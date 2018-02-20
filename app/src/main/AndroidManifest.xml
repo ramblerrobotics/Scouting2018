@@ -18,15 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Manual" />
+        <activity android:name=".Manual" android:screenOrientation="sensorPortrait"/>
         <activity android:name=".TeamList" android:screenOrientation="sensorLandscape"/>
-        <activity android:name=".ScoutSched" />
-        <activity android:name=".MatchSched" />
+        <activity android:name=".ScoutSched" android:screenOrientation="sensorLandscape"/>
+        <activity android:name=".MatchSched" android:screenOrientation="sensorLandscape"/>
         <activity android:name=".Contacts" />
         <activity android:name=".QRData" />
         <activity android:name=".License" />
-        <activity android:name=".MenuScreen" />
-        <activity android:name=".userinput" />
+        <activity android:name=".MenuScreen" android:screenOrientation="sensorPortrait"/>
+        <activity android:name=".userinput" android:screenOrientation="sensorLandscape"/>
         <activity android:name=".details" android:screenOrientation="sensorLandscape"></activity>
     </application>
 
