@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Scouting2018</string>
     <string name="statistic_climb">CLIMB</string>
     <string name="statistic_highscale">HIGH SCALE</string>
     <string name="stat_lowscale">LOW SCALE</string>

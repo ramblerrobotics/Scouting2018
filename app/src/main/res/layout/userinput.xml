@@ -107,7 +107,7 @@
         app:layout_constraintStart_toEndOf="@+id/Auto" />
 
     <TextView
-        android:id="@+id/TeamNumber"
+        android:id="@+id/teamNum5"
         android:layout_width="33dp"
         android:layout_height="50dp"
         android:text="@string/team_number6066"
@@ -124,7 +124,6 @@
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="6dp"
-        app:layout_constraintStart_toEndOf="@+id/TeamNumber"
         app:layout_constraintTop_toBottomOf="@+id/climb" />
 
     <TextView
@@ -134,7 +133,6 @@
         android:layout_marginStart="56dp"
         android:layout_marginLeft="56dp"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="@+id/TeamNumber"
         app:layout_constraintTop_toTopOf="@+id/climbspinner" />
 
     <Spinner
@@ -201,7 +199,6 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:ems="10"
-        android:inputType="textPassword"
         app:layout_constraintBaseline_toBaselineOf="@+id/autoText"
         app:layout_constraintStart_toEndOf="@+id/autospinner" />
 
@@ -210,6 +207,7 @@
         android:layout_width="133dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="49dp"
+        android:onClick="addResult"
         android:text="Add Result"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -225,5 +223,16 @@
         android:inputType="numberSigned"
         app:layout_constraintStart_toEndOf="@+id/ls"
         app:layout_constraintTop_toBottomOf="@+id/WinLoss" />
+
+    <CheckBox
+        android:id="@+id/crossed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="Crossed Auto Line?"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

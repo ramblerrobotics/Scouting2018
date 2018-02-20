@@ -1,69 +1,87 @@
 package org.mcbain.scouting2018;
 
+import android.content.Intent;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
-public class TeamList extends AppCompatActivity {
-    String nums[] = new String[Globals.teams.length];
-    String names [] = new String [Globals.teams.length];
+public class TeamList extends AppCompatActivity implements View.OnClickListener{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        for(int i = 0; i < Globals.teams.length; i++) {
-            nums[i] = Integer.toString(Globals.teams[i].getNum());
-            names[i] = Globals.teams[i].getName();
-        }
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                //android.R.layout.simple_list_item_1, nums);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teamlistslayout);
 
-        ListView listView=(ListView)findViewById(R.id.listView);
-
-        CustomAdapter customAdapter=new CustomAdapter();
-
-        listView.setAdapter(customAdapter);
-    }
-    class CustomAdapter extends BaseAdapter{
-
-        @Override
-        public int getCount() {
-            return nums.length;
+            for (Team t : Globals.teams) {
+                if (t.getNum() == 99999)
+                    continue;
+                TableRow tr = new TableRow(getApplicationContext());
+                TextView teamnumber = new TextView(getApplicationContext());
+                TextView teamname = new TextView(getApplicationContext());
+                TextView climb = new TextView(getApplicationContext());
+                TextView highscale = new TextView(getApplicationContext());
+                TextView lowscale = new TextView(getApplicationContext());
+                TextView winloss = new TextView(getApplicationContext());
+                TextView autoline = new TextView(getApplicationContext());
+                TextView autoscale = new TextView(getApplicationContext());
+                int c = 0, hs = 0, ls = 0, wl = 0, as = 0;
+                Boolean al = false;
+                int valids = 0;
+                for (int i = 0; i < 13; i++) {
+                    if (t.getResult(i).isValid()) {
+                        c += t.getResult(i).getClimb();
+                        hs += t.getResult(i).getHighScale();
+                        ls += t.getResult(i).getLowScale();
+                        wl += t.getResult(i).getMargin();
+                        as += t.getResult(i).getAutoScale();
+                        if (t.getResult(i).getCrossedAuto())
+                            al = true;
+                        valids++;
+                    }
+                }
+                if(valids != 0) {
+                    teamnumber.setText(Integer.toString(t.getNum()));
+                    teamname.setText(t.getName());
+                    climb.setText(Float.toString(((float) c) / ((float) valids)));
+                    highscale.setText(Float.toString(((float) hs) / ((float) valids)));
+                    lowscale.setText(Float.toString(((float) ls) / (float) valids));
+                    winloss.setText(Float.toString(((float) wl) / (float) valids));
+                    autoscale.setText(Float.toString(((float) as) / (float) valids));
+                    autoline.setText(String.valueOf(al));
+                }else {
+                    teamnumber.setText(Integer.toString(t.getNum()));
+                    teamname.setText(t.getName());
+                    climb.setText("N/A");
+                    highscale.setText("N/A");
+                    lowscale.setText("N/A");
+                    winloss.setText("N/A");
+                    autoscale.setText("N/A");
+                    autoline.setText("N/A");
+                }
+                tr.addView(teamnumber);
+                tr.addView(teamname);
+                tr.addView(climb);
+                tr.addView(highscale);
+                tr.addView(lowscale);
+                tr.addView(winloss);
+                tr.addView(autoline);
+                tr.addView(autoscale);
+                tr.setOnClickListener(this);
+                ((TableLayout) findViewById(R.id.StatsTable)).addView(tr);
+            }
+            TextView nothing = new TextView(getApplicationContext());
+            nothing.setText("Boring placeholder text");
+            nothing.setVisibility(View.INVISIBLE);
+            TableRow nothing2 = new TableRow(getApplicationContext());
+            nothing2.addView(nothing);
+        ((TableLayout)findViewById(R.id.StatsTable)).addView(nothing2);
         }
 
-        @Override
-        public Object getItem(int i) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            view = getLayoutInflater().inflate(R.layout.customlayout,null);
-
-            TextView textView =(TextView)view.findViewById(R.id.editText);
-            TextView textView2 = (TextView)view.findViewById(R.id.editText2);
-            textView2.setInputType(InputType.TYPE_NULL);
-            textView.setInputType(InputType.TYPE_NULL);
-
-            textView.setText(nums[i]);
-            textView2.setText(names[i]);
-            return view;
-        }
-    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -73,5 +91,12 @@ public class TeamList extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent = new Intent(this, details.class);
+        intent.putExtra("NUM", Integer.parseInt(((TextView)((TableRow)v).getChildAt(0)).getText().toString()));
+        startActivity(intent);
     }
 }
