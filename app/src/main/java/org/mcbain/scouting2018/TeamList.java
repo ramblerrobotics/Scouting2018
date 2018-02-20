@@ -75,7 +75,7 @@ public class TeamList extends AppCompatActivity implements View.OnClickListener{
                 ((TableLayout) findViewById(R.id.StatsTable)).addView(tr);
             }
             TextView nothing = new TextView(getApplicationContext());
-            nothing.setText("Boring placeholder text");
+            nothing.setText(".");
             nothing.setVisibility(View.INVISIBLE);
             TableRow nothing2 = new TableRow(getApplicationContext());
             nothing2.addView(nothing);
