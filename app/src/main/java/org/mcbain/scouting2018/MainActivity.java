@@ -13,8 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.JsonReader;
 import android.util.JsonToken;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -59,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void initData(View view) {
+        Toast toast = Toast.makeText(getApplicationContext(), "Download completed!", Toast.LENGTH_SHORT);
+        toast.show();
             String data;
             Globals.teams = new Team[50];
             for (int i = 0; i < 50; i++)
@@ -180,9 +185,8 @@ public class MainActivity extends AppCompatActivity {
             FileIO.load(getApplicationContext());
     }
     public void initData2(View view){
-        if(FileIO.load(getApplicationContext())){//saved data
-            //return true;
-        }else{
+        Toast toast = Toast.makeText(getApplicationContext(), "Download completed!", Toast.LENGTH_SHORT);
+        toast.show();
             String data;
             Globals.teams = new Team[50];
             for(int i = 0; i < 50; i++)
@@ -304,6 +308,6 @@ public class MainActivity extends AppCompatActivity {
             FileIO.save(getApplicationContext());
             FileIO.load(getApplicationContext());
         }
-    }
+
 
 }
