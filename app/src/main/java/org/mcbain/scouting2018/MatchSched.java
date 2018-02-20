@@ -34,7 +34,7 @@ public class MatchSched extends AppCompatActivity implements View.OnClickListene
                 //((TextView)findViewById(R.id.TextViewr8c5)).setText(Integer.toString(match.getNum()));
                 TableRow tr = (TableRow)tlayout.getChildAt(match.getNum() + 1);
                 Date date = new Date(match.getTime() * 1000L);
-                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
                 ((TextView)tr.getChildAt(0)).setText(sdf.format(date));
                 ((TextView)tr.getChildAt(1)).setText(Integer.toString(match.getNum()));
                 ((TextView)tr.getChildAt(2)).setText(Integer.toString(match.getR1()));
