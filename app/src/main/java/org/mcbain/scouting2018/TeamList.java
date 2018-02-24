@@ -11,13 +11,18 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class TeamList extends AppCompatActivity implements View.OnClickListener{
-
+    Team[] teams;
+    float[][] avgs;
+    Boolean[] lines;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teamlistslayout);
-
-            for (Team t : Globals.teams) {
+        teams = Globals.teams;
+        avgs = new float[Globals.teams.length][5];
+        lines = new Boolean[Globals.teams.length];
+            for (int j = 0; j < Globals.teams.length; j++) {
+                Team t = Globals.teams[j];
                 if (t.getNum() == 99999)
                     continue;
                 TableRow tr = new TableRow(getApplicationContext());
@@ -45,15 +50,27 @@ public class TeamList extends AppCompatActivity implements View.OnClickListener{
                     }
                 }
                 if(valids != 0) {
+                    avgs[j][0] = ((float) c) / ((float) valids);
+                    avgs[j][1] = ((float) hs) / ((float) valids);
+                    avgs[j][2] = ((float) ls) / ((float) valids);
+                    avgs[j][3] = ((float) wl) / ((float) valids);
+                    avgs[j][4] = ((float) as) / ((float) valids);
                     teamnumber.setText(Integer.toString(t.getNum()));
                     teamname.setText(t.getName());
-                    climb.setText(Float.toString(((float) c) / ((float) valids)));
-                    highscale.setText(Float.toString(((float) hs) / ((float) valids)));
-                    lowscale.setText(Float.toString(((float) ls) / (float) valids));
-                    winloss.setText(Float.toString(((float) wl) / (float) valids));
-                    autoscale.setText(Float.toString(((float) as) / (float) valids));
+                    climb.setText(Float.toString(avgs[j][0]));
+                    highscale.setText(Float.toString(avgs[j][1]));
+                    lowscale.setText(Float.toString(avgs[j][2]));
+                    winloss.setText(Float.toString(avgs[j][3]));
+                    autoscale.setText(Float.toString(avgs[j][4]));
+                    lines[j] = al;
                     autoline.setText(String.valueOf(al));
                 }else {
+                    avgs[j][0] = -1f;
+                    avgs[j][1] = -1f;
+                    avgs[j][2] = -1f;
+                    avgs[j][3] = -1f;
+                    avgs[j][4] = -1f;
+                    lines[j] = false;
                     teamnumber.setText(Integer.toString(t.getNum()));
                     teamname.setText(t.getName());
                     climb.setText("N/A");
@@ -92,7 +109,66 @@ public class TeamList extends AppCompatActivity implements View.OnClickListener{
         }
         return super.onOptionsItemSelected(item);
     }
-
+    public void bubbleSort(int category){
+        Boolean moved = true;
+        while(moved) {
+            moved = false;
+            for (int i = 1; i < teams.length; i++) {
+                if (teams[i].getNum() == 99999)
+                    continue;
+                if (avgs[i][category] > avgs[i - 1][category]) {
+                    moved = true;
+                    Team num1 = teams[i];
+                    Team num2 = teams[i - 1];
+                    teams[i] = num2;
+                    teams[i - 1] = num1;
+                    float[] f1 = avgs[i];
+                    float[] f2 = avgs[i - 1];
+                    avgs[i] = f2;
+                    avgs[i - 1] = f1;
+                    Boolean b1 = lines[i];
+                    Boolean b2 = lines[i - 1];
+                    lines[i] = b2;
+                    lines[i - 1] = b1;
+                }
+            }
+        }
+    }
+    public void update(){
+        for(int i = 0; i < teams.length; i++){
+            if(teams[i].getNum() == 99999)
+                continue;
+            TableRow tr = (TableRow)((TableLayout)findViewById(R.id.StatsTable)).getChildAt(i + 1);
+            ((TextView)tr.getChildAt(0)).setText(Integer.toString(teams[i].getNum()));
+            ((TextView)tr.getChildAt(1)).setText(teams[i].getName());
+            ((TextView)tr.getChildAt(2)).setText(Float.toString(avgs[i][0]).equals("-1.0") ? "N/A" : Float.toString(avgs[i][0]));
+            ((TextView)tr.getChildAt(3)).setText(Float.toString(avgs[i][1]).equals("-1.0") ? "N/A" : Float.toString(avgs[i][1]));
+            ((TextView)tr.getChildAt(4)).setText(Float.toString(avgs[i][2]).equals("-1.0") ? "N/A" : Float.toString(avgs[i][2]));
+            ((TextView)tr.getChildAt(5)).setText(Float.toString(avgs[i][3]).equals("-1.0") ? "N/A" : Float.toString(avgs[i][3]));
+            ((TextView)tr.getChildAt(6)).setText(String.valueOf(lines[i]));
+            ((TextView)tr.getChildAt(7)).setText(Float.toString(avgs[i][4]).equals("-1.0") ? "N/A" : Float.toString(avgs[i][4]));
+        }
+    }
+    public void climbSort(View v){
+        bubbleSort(0);
+        update();
+    }
+    public void highSort(View v){
+        bubbleSort(1);
+        update();
+    }
+    public void lowSort(View v){
+        bubbleSort(2);
+        update();
+    }
+    public void marginSort(View v){
+        bubbleSort(3);
+        update();
+    }
+    public void autoSort(View v){
+        bubbleSort(4);
+        update();
+    }
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, details.class);
