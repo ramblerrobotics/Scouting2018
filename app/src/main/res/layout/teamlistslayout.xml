@@ -53,6 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="5dp"
+                    android:onClick="climbSort"
                     android:text="Climb" />
 
                 <TextView
@@ -60,6 +61,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:onClick="highSort"
                     android:text="High Scale" />
 
                 <TextView
@@ -67,6 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:onClick="lowSort"
                     android:text="Low Scale" />
 
                 <TextView
@@ -74,6 +77,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:onClick="marginSort"
                     android:text="Win/Loss" />
 
                 <TextView
@@ -88,6 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:onClick="autoSort"
                     android:text="Auto Scale" />
 
 
