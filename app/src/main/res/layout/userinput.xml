@@ -119,7 +119,7 @@
 
     <Spinner
         android:id="@+id/climbspinner"
-        android:layout_width="63dp"
+        android:layout_width="75dp"
         android:layout_height="39dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -127,34 +127,15 @@
         app:layout_constraintStart_toStartOf="@+id/climb"
         app:layout_constraintTop_toBottomOf="@+id/climb" />
 
-    <TextView
-        android:id="@+id/climbText"
-        android:layout_width="13dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/climb"
-        app:layout_constraintTop_toTopOf="@+id/climbspinner" />
-
     <Spinner
         android:id="@+id/hs"
-        android:layout_width="49dp"
+        android:layout_width="75dp"
         android:layout_height="40dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="@+id/HighScale"
         app:layout_constraintTop_toBottomOf="@+id/HighScale" />
-
-    <TextView
-        android:id="@+id/hsText"
-        android:layout_width="15dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/climbText"
-        app:layout_constraintStart_toStartOf="@+id/hs" />
 
     <Spinner
         android:id="@+id/ls"
@@ -166,33 +147,15 @@
         app:layout_constraintStart_toStartOf="@+id/LowScale"
         app:layout_constraintTop_toBottomOf="@+id/LowScale" />
 
-    <TextView
-        android:id="@+id/lsText"
-        android:layout_width="15dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginLeft="15dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/hsText"
-        app:layout_constraintStart_toStartOf="@+id/ls" />
-
     <Spinner
         android:id="@+id/autospinner"
-        android:layout_width="72dp"
+        android:layout_width="75dp"
         android:layout_height="37dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toEndOf="@+id/WinLossScore"
         app:layout_constraintTop_toBottomOf="@+id/Auto" />
-
-    <TextView
-        android:id="@+id/autoText"
-        android:layout_width="7dp"
-        android:layout_height="18dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/WinLossScore"
-        app:layout_constraintStart_toStartOf="@+id/autospinner" />
 
     <EditText
         android:id="@+id/notesText"
@@ -201,7 +164,7 @@
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
         android:ems="10"
-        app:layout_constraintBaseline_toBaselineOf="@+id/autoText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/WinLossScore"
         app:layout_constraintStart_toEndOf="@+id/autospinner" />
 
     <Button
