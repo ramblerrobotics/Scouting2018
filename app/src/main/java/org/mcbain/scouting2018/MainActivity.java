@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         for(int j = 0; j < 100; j++){
             Globals.matches[j] = new Match();
         }
-        String data2 = DownloadPage.downloadSched("2017mike2");
+        String data2 = DownloadPage.downloadSched("2018mike2");
         if(data2.equals("FAIL"))
             return;
         try{
@@ -192,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
             for(int i = 0; i < 50; i++)
                 Globals.teams[i] = new Team(99999, "INVALID TEAM");
             try{
-                data = DownloadPage.downloadTeams("2017mike2"); // get from Victor's code
+                data = DownloadPage.downloadTeams("2018mitvc"); // get from Victor's code
             int i = 0;
             int tmpNum = -1;
             String tmpStr = "FAKE";
